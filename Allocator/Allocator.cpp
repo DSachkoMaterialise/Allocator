@@ -11,7 +11,7 @@ void* Allocator::allocate(size_t i_size)
 		{
 		if (ite->first - itb->second >= i_size)
 			{
-			m_busy.insert({itb->second, itb->second + i_size});
+			m_busy.insert(itb, {itb->second, itb->second + i_size});
 			return m_data + itb->second;
 			}
 		}
